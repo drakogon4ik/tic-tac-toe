@@ -508,7 +508,7 @@ CODESEG
 
 proc draw_map
 
-	; function that draws the map
+	; procedure  that draws the map
 	
 	pusha
 	
@@ -566,7 +566,7 @@ endp draw_map
 
 proc get_rectangle
 
-	; function returns the square that the user pressed on
+	; procedure  returns the square that the user pressed on
 	
 	mov ax, 01h
 	int 33h
@@ -631,7 +631,7 @@ endp get_rectangle
 
 proc replay
 
-	; function sets 1 in restarting, if user pressed "play again"
+	; procedure  sets 1 in restarting, if user pressed "play again"
 	
 	mov ax, 01h
 	int 33h
@@ -664,7 +664,7 @@ endp replay
 
 proc change_shape
 	
-	; function changes value of "shape" from 1 to 2 or vice versa
+	; procedure  changes value of "shape" from 1 to 2 or vice versa
 	
 	pusha
 	xor cx, cx
@@ -867,7 +867,7 @@ exit:
 	
 proc start_varibles
 
-	; function refreshes all start varibles
+	; procedure refreshes all default start variables
 	
 	mov [restarting], 0
 	mov [winner], 0
@@ -893,7 +893,7 @@ endp start_varibles
 	
 proc get_square_coords
 
-	; function sets coordinates of the square (ax - x; cx - y)
+	; procedure  sets coordinates of the square (ax - x; cx - y)
 	
     cmp ax, 0
     je set_case_0
@@ -966,6 +966,8 @@ endp get_square_coords
 
 
 proc check_winner
+
+	; procedure that checks if there is winner
 	
 	pusha
 
